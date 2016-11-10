@@ -1,0 +1,28 @@
+    <!-- Map Section -->
+    <div id="map">
+  <script type="text/javascript">
+//<![CDATA[  
+google.load('maps', '2' {callback:simple3});var map;	
+function simple3(){	
+if (GBrowserIsCompatible()) { 
+function createMarker(point,html) {
+var marker = new GMarker(point);
+GEvent.addListener(marker, "click", function() {
+marker.openInfoWindowHtml(html);});
+return marker;}			
+var map = new GMap2(document.getElementById("map"));
+map.addControl(new GLargeMapControl());
+map.addControl(new GMapTypeControl());	  
+map.setCenter(new GLatLng(23.1311,-82.3726),13);}	  
+var point = new GLatLng(23.1351,-82.3598);
+var marker = createMarker(point,'<div style="width:240px">El Capitolio de la Habana <a href="http://norfipc.com">Pagina web<\/a> con mas información<\/div>')
+map.addOverlay(marker);
+var point = new GLatLng(23.1368,-82.3816);
+var marker = createMarker(point,'La Universidad de la Habana')
+map.addOverlay(marker);}
+window.onload=function(){simple3();}
+//]]>
+</script>
+<div id="map" style=""></div>
+
+    </div>
